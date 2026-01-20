@@ -1,0 +1,377 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+    --primary-green: #2ecc71;
+    --dark-background: rgba(18, 18, 18, 0.8);
+    --secondary-green: #27ae60;
+    --text-light: #e0e0e0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.video-background {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: 1200px;
+    height: 800px;
+    z-index: -100;
+    object-fit: cover;
+    opacity: 100%;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--dark-background);
+    color: var(--text-light);
+    line-height: 1.6;
+    position: relative;
+}
+
+/* Rest of the previous CSS remains the same, with slight modifications to account for video background */
+.floating-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(15, 15, 15, 0.9);
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+}
+
+.nav-links a.active {
+    position: relative;
+    color: #fff; /* Keep the text color unchanged */
+}
+
+.nav-links a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-green);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    color: var(--primary-green);
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.logo-full {
+    font-size: 1.2rem;
+    color: var(--text-light);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--primary-green);
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.content-wrapper {
+    max-width: 1200px;
+    margin: 100px auto 0;
+    padding: 0 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.hero-section {
+    text-align: center;
+    background-color: rgba(30, 30, 30, 0.7);
+    padding: 60px 20px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    color: var(--primary-green);
+    margin-bottom: 15px;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.content-card {
+    background-color: rgba(40, 40, 40, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-green);
+}
+
+.content-card h2 {
+    color: var(--primary-green);
+    margin-bottom: 15px;
+}
+
+.content-card ul {
+    list-style-type: none;
+    margin-top: 15px;
+}
+
+.content-card ul li {
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.learning-path {
+    background-color: rgba(30, 30, 30, 0.7);
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.path-timeline {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.path-step {
+    text-align: center;
+    flex: 1;
+    padding: 20px;
+    background-color: rgba(50, 50, 50, 0.5);
+    margin: 0 10px;
+    border-radius: 5px;
+}
+
+.site-footer {
+    background-color: rgba(15, 15, 15, 0.9);
+    padding: 30px 0 15px;
+    margin-top: 30px;
+    position: relative;
+    z-index: 10;
+}
+
+.footer-content {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+    gap: 20px;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+}
+
+.footer-column h4 {
+    color: var(--primary-green);
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.footer-column a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin-bottom: 5px;
+    font-size: 0.85rem;
+    transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: var(--primary-green);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.6);
+}
+
+
+/* Sidebar */
+.list-group {
+    margin-top: 100px;
+    background-color: #1e1e1e;
+    border-radius: 5px;
+}
+
+.list-group-item {
+    background-color: #1e1e1e;
+    color: #00ff99;
+    border: 1px solid #333;
+    transition: all 0.3s;
+}
+
+.list-group-item:hover {
+    background-color: #00ccff;
+    color: #121212;
+    font-weight: bold;
+}
+
+.list-group-item.active {
+    background-color: #00ff99 !important;
+    color: #121212 !important;
+    border-left: 4px solid #00ccff;
+    font-weight: bold;
+}
+
+/* Content Area */
+#content-area {
+    margin-top: 100px;
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #00ccff;
+    box-shadow: 0 0 10px rgba(0, 255, 153, 0.5);
+}
+
+h2 {
+    color: #00ccff;
+    border-bottom: 2px solid #00ff99;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+p {
+    color: #d0d0d0;
+}
+
+/* Forms and Buttons */
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    color: #00ff99;
+    font-weight: bold;
+}
+
+input, select {
+    background-color: #1e1e1e;
+    border: 1px solid #00ff99;
+    color: #00ccff;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+input::placeholder {
+    color: #888;
+}
+
+button.btn-primary {
+    background-color: #00ccff;
+    border: none;
+    color: #121212;
+    font-weight: bold;
+}
+
+button.btn-primary:hover {
+    background-color: #00ff99;
+}
+
+button.btn-secondary {
+    background-color: #444;
+    border: none;
+    color: #d0d0d0;
+}
+
+button.btn-secondary:hover {
+    background-color: #666;
+}
+
+.result {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #222;
+    border-left: 4px solid #00ccff;
+    color: #00ff99;
+}
+
+.error {
+    color: #ff4444;
+    background-color: #330000;
+    padding: 10px;
+    border-left: 4px solid #ff4444;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Section specific styles */
+.calculator-container {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.swap-arrows {
+    font-size: 2rem;
+    color: #4CAF50;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.calculator-title {
+    color: #4CAF50;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.button-group {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+}
